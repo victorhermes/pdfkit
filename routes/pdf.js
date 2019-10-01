@@ -3,17 +3,20 @@ const router = express.Router()
 const PDFDocument = require('pdfkit')
 
 router.post('/', (req, res) => {
-  const doc = new PDFDocument()
+  const doc = new PDFDocument({
+    layout : 'landscape'
+    });
+    
   let filename = req.body.filename
+  let content = req.body.content
   // Stripping special characters
   filename = encodeURIComponent(filename) + '.pdf'
   // Setting response to 'attachment' (download).
   // If you use 'inline' here it will automatically open the PDF
-  res.setHeader('Content-disposition', 'attachment; filename="' + filename + '"')
+  res.setHeader('Content-disposition', 'inline; filename="' + filename + '"')
   res.setHeader('Content-type', 'application/pdf')
-  const content = req.body.content
-  doc.y = 300
-  doc.text(content, 50, 50)
+  doc.fontSize(40).text(content, 0, 400, { align: 'center', fit: [0,400] });
+  doc.image('public/images/cert.png', 10, 35, {width: 770});
   doc.pipe(res)
   doc.end()
 })
