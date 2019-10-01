@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
   // If you use 'inline' here it will automatically open the PDF
   res.setHeader('Content-disposition', 'inline; filename="' + filename + '"')
   res.setHeader('Content-type', 'application/pdf')
-  doc.fontSize(40).text(content, 0, 400, { align: 'center', fit: [0,400] });
+  doc.fontSize(40).text(content, { align: 'center', valign: 'center' });
   doc.image('public/images/cert.png', 10, 35, {width: 770});
   doc.pipe(res)
   doc.end()
