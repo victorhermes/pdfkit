@@ -18,7 +18,7 @@ router.post("/", (req, res) => {
   );
 
   var archive = archiver("zip", {
-    zlib: { level: 9 } // Sets the compression level.
+    zlib: { level: 9 }
   });
 
   // good practice to catch this error explicitly
