@@ -13,9 +13,9 @@ const students = [
 ];
 
 router.post("/", (req, res) => {
-  /* var output = fs.createWriteStream(
+  var output = fs.createWriteStream(
     `public/zipFiles/certificateID_${Math.random()}.zip`
-  ); */
+  );
 
   var archive = archiver("zip", {
     zlib: { level: 9 } // Sets the compression level.
