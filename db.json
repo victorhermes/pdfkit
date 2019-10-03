@@ -1,0 +1,17 @@
+{
+  "tools": [
+    {
+      "title": "react-native-windows",
+      "tags": [
+        {
+          "label": "framework",
+          "value": "framework"
+        },
+        {
+          "label": "react-native",
+          "value": "react-native"
+        }
+      ]
+    }
+  ]
+}
