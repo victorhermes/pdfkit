@@ -62,6 +62,8 @@ router.post("/", (req, res) => {
     });
   } catch (err) {
     console.error("MakePDF ERROR: " + err.message);
+  } finally {
+    res.redirect("/");
   }
 });
 
