@@ -13,9 +13,9 @@ const students = [
 ];
 
 router.post("/", (req, res) => {
-  var output = fs.createWriteStream(
+  /*var output = fs.createWriteStream(
     `public/zipFiles/certificateID_${Math.random()}.zip`
-  );
+  );*/
 
   var archive = archiver("zip", {
     zlib: { level: 9 } // Sets the compression level.
@@ -33,7 +33,7 @@ router.post("/", (req, res) => {
 
   archive.pipe(res.attachment("certificateID.zip"));
 
-  students.forEach(s => {
+  students.map(s => {
     archive.file(`public/pdf/${s.filename}.pdf`, {
       name: `${s.filename}.pdf`
     });
