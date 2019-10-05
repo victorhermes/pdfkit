@@ -30,7 +30,6 @@ const students = [
   { filename: "Janilo" },
   { filename: "Danilo" },
   { filename: "Daniel" },
-  { filename: "Daniele" },
   { filename: "Dani" },
   { filename: "Donis" },
   { filename: "Tino" },
