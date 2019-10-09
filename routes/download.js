@@ -37,7 +37,6 @@ const students = [
   { filename: "Tenor" },
   { filename: "Janes" },
   { filename: "Victors" },
-  { filename: "Joaos" }
 ];
 
 router.post("/", (req, res) => {
